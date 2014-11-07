@@ -9,11 +9,12 @@ PathMaker::PathMaker(){
 	xpos = 0;
 	ypos = 0;
 	leftEdge = false;
+	start = "";  //stored as NESW and index (N2=top at index 2)
 	dir = "";
 }
 
 void PathMaker::instructions(){
-	cout << "\nMove the 'O' with the arrow keys or numpad to build a path.";
+	cout << "\nMove the 'O' with the arrow keys to build a path.";
 	cout << "\nPath starts when you leave the edge and ends when you re-enter it.";
 	cout << "\nMonsters follow the path in the order built.\n";
 }

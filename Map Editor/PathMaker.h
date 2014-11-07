@@ -6,7 +6,7 @@ using namespace std;
 class PathMaker{
 public:
 	PathMaker();
-	string name, symbol, dir;
+	string name, symbol, start, dir;
 	int xpos, ypos;
 	bool leftEdge;
 

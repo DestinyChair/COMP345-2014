@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "Tile.h"
+#include "Character.h"
 #include <iostream>
 
 using namespace std;
@@ -32,10 +33,21 @@ Tile Map::getTile(int j, int i){
 	return map[j][i];
 }
 
+//name, symbol, buildable
 void Map::setTile(int j, int i, string n, string s, bool b){
 	map[j][i].setName(n);
 	map[j][i].setSymbol(s);
 	map[j][i].setBuildable(b);
+}
+
+//dmg, range
+void Map::setTile(int j, int i, int d, int r){
+	map[j][i].setDmg(d);
+	map[j][i].setRange(r);
+}
+
+void Map::setSymbol(int j, int i, string s){
+	map[j][i].setSymbol(s);
 }
 
 void Map::legend(){

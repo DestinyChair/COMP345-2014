@@ -9,11 +9,12 @@ protected:
 	string name;
 	string symbol;
 	bool buildable;
+	int dmg, range;
 
 public:
 	Tile();
 	Tile(string n, string s, bool b);
-	~Tile();
+	Tile(string n, string s, bool b, int d, int r);
 
 	string getName();
 	void setName(string n);
@@ -21,6 +22,8 @@ public:
 	string getSymbol();
 	void setSymbol(string s);
 
+	void setDmg(int d), setRange(int r);
+	int getDmg(), getRange();
 	void printDetails();
 
 	bool isBuildable();

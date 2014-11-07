@@ -8,6 +8,8 @@ Tile::Tile(){
 	name = "Scenery";
 	symbol = "_";
 	buildable = true;
+	dmg = 0;
+	range = 0;
 }
 
 Tile::Tile(string n, string s, bool b){
@@ -16,8 +18,13 @@ Tile::Tile(string n, string s, bool b){
 	buildable = b;
 }
 
-Tile::~Tile(){
-	
+
+Tile::Tile(string n, string s, bool b, int d, int r){
+	name = n;
+	symbol = s;
+	buildable = b;
+	dmg = d;
+	range = r;
 }
 
 //getter and setter methods
@@ -37,10 +44,35 @@ void Tile::setSymbol(string s){
 	symbol = s;
 }
 
+int Tile::getDmg(){
+	return dmg;
+}
+
+void Tile::setDmg(int d){
+	dmg = d;
+}
+
+int Tile::getRange(){
+	return range;
+}
+
+void Tile::setRange(int r){
+	range = r;
+}
+
 void Tile::printDetails(){
+	string buildable;
+	if (this->isBuildable()){
+		buildable = "true";
+	}
+	else{
+		buildable = "false";
+	}
 	cout << "\nName: " + getName();
 	cout << "\nSymbol: " + getSymbol();
-	cout << "\nBuildable: " + isBuildable();
+	cout << "\nBuildable: " + buildable;
+	cout << "\nDamage: " + getDmg();
+	cout << "\nRange: " + getRange() << "\n";
 }
 
 bool Tile::isBuildable(){
